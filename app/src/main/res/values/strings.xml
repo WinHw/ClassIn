@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ClassIn</string>
+    <string name="log_in">Log In</string>
+    <string name="reset_password">Reset Password</string>
 </resources>

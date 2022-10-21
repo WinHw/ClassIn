@@ -7,4 +7,10 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/poppins_regular" />
+    <font
+        android:fontWeight="300"
+        android:font="@font/poppins_light" />
+    <font
+        android:fontWeight="200"
+        android:font="@font/poppins_extralight" />
 </font-family>
