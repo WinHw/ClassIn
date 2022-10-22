@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/ClassIn/app/src/main/res/font/poppins.xml" value="0.2037037037037037" />
         <entry key="..\:/AndroidStudioProjects/ClassIn/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ClassIn/app/src/main/res/layout/activity_reset_password.xml" value="0.176" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ClassIn/app/src/main/res/layout/activity_student_log.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ClassIn/app/src/main/res/layout/activity_student_profile.xml" value="0.2" />
       </map>
     </option>
   </component>

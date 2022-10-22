@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/gambar1"
+        android:layout_width="20dp"
+        android:layout_height="33dp"
+        app:srcCompat="@drawable/back"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="back_icon"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log History"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/gambar1"/>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Wednesday, Sept 27 2022, 10:45:01"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/text1"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/title"
+        android:text="Late"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/subtext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Near C Building, Fasilkom-TI"
+        android:layout_below="@id/text1"
+        android:layout_marginLeft="30dp"/>
+    <TextView
+        android:id="@+id/smalltext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0.5 km away from class"
+        android:textSize="12sp"
+        android:layout_below="@id/subtext1"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/smalltext1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Wednesday,  Sept 27 2022, 10:30:01"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/text2"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/smalltext1"
+        android:text="Present"
+        android:textSize="15sp"
+        android:textColor="@color/green"/>
+    <TextView
+        android:id="@+id/subtext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Near C Building, Fasilkom-TI"
+        android:layout_below="@id/text2"
+        android:layout_marginLeft="30dp"/>
+    <TextView
+        android:id="@+id/smalltext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0.5 km away from class"
+        android:textSize="12sp"
+        android:layout_below="@id/subtext2"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/smalltext2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Wednesday,  Sept 27 2022, 12:45:01"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/text2"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/smalltext2"
+        android:text="Absent"
+        android:textSize="15sp"
+        android:textColor="#FF0000"/>
+    <TextView
+        android:id="@+id/subtext3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-----"
+        android:layout_below="@id/text3"
+        android:layout_marginLeft="30dp"/>
+    <TextView
+        android:id="@+id/smalltext3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not in class"
+        android:textSize="12sp"
+        android:layout_below="@id/subtext3"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/smalltext3"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Wednesday,  Sept 27 2022, 10:30:01"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/text2"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/smalltext3"
+        android:text="Excused"
+        android:textSize="15sp"
+        android:textColor="#0593D0"/>
+    <TextView
+        android:id="@+id/subtext4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Auditorum, USU"
+        android:layout_below="@id/text4"
+        android:layout_marginLeft="30dp"/>
+    <TextView
+        android:id="@+id/smalltext4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not in class"
+        android:textSize="12sp"
+        android:layout_below="@id/subtext4"
+        android:layout_marginLeft="30dp"/>
+</RelativeLayout>
