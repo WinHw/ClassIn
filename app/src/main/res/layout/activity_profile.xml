@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProfileActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back_mhs"
+            android:layout_width="20dp"
+            android:layout_height="33dp"
+            app:srcCompat="@drawable/back"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="back_icon"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="19.5dp"
+            android:layout_toRightOf="@id/back_mhs"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="60dp"
+        >
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Mahasiswa"
+                android:textColor="@color/green_ci"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="20sp"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_marginTop="5dp"
+                android:layout_height="200dp"
+                android:src="@drawable/avatar"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="1.5dp"
+                />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/mhs_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="John Doe"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="#668ED974"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="200dp"
+                >
+                <TextView
+                    android:id="@+id/mhs_nim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="191402012"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="16sp"
+                    />
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_mhs_email"
+                app:helperText="Email"
+                app:helperTextTextColor="@color/green_ci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                >
+                <TextView
+                    android:id="@+id/mhs_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="johndoe@students.usu.ac.id"
+                    android:gravity="left"
+                    android:textColor="@color/black"
+                    android:background="#00000000"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/poppins"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_mhs_telephone"
+                app:helperText="Telephone"
+                app:helperTextTextColor="@color/green_ci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                >
+                <TextView
+                    android:id="@+id/mhs_telephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+62 852-1234-5678"
+                    android:gravity="left"
+                    android:textColor="@color/black"
+                    android:background="#00000000"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/poppins"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_mhs_courses"
+                app:helperText="Courses"
+                app:helperTextTextColor="@color/green_ci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                >
+                <TextView
+                    android:id="@+id/mhs_courses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/courses"
+                    android:gravity="left"
+                    android:textColor="@color/black"
+                    android:background="#00000000"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/poppins"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

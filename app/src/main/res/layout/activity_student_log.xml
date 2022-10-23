@@ -18,13 +18,13 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log History"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/gambar1"/>
+        android:layout_toRightOf="@id/gambar1"
+        android:text="Log History"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/text1"
