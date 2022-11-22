@@ -146,16 +146,17 @@
 
         <TableRow
             android:gravity="center_horizontal">
+
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/green"
                 android:fontFamily="@font/poppins_regular"
-                android:textSize="12dp"
                 android:text="Attend Class"
                 android:textAllCaps="false"
-                android:background="@color/green"
                 android:textColor="@color/white"
-                />
+                android:textSize="12dp"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
