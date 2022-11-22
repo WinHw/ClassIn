@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/gambar1"
+        android:layout_width="20dp"
+        android:layout_height="33dp"
+        app:srcCompat="@drawable/back"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/back_icon"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/gambar1"
+        android:text="@string/notification_tag"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/box1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/title"
+        android:background="#FAFAFA"
+        android:paddingLeft="10dp">
+
+        <ImageView
+            android:id="@+id/gambar2"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/bell_icon"
+            app:srcCompat="@drawable/bell" />
+
+        <TextView
+            android:id="@+id/notif1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/gambar2"
+            android:text="Public Lecture : MoU Signing with Huawei"
+            android:textColor="#4CA456"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/post_name1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_below="@id/notif1"
+            android:layout_toRightOf="@id/gambar2"
+            android:text="Administration Office"
+            android:textColor="@color/black"
+            android:textSize="10sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/box2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/box1"
+        android:background="#FAFAFA"
+        android:paddingLeft="10dp">
+
+        <ImageView
+            android:id="@+id/gambar3"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/bell_icon"
+            app:srcCompat="@drawable/bell" />
+
+        <TextView
+            android:id="@+id/notif2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/gambar3"
+            android:text="TIF4502 Class Postponed"
+            android:textColor="#4CA456"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/post_name2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_below="@id/notif2"
+            android:layout_toRightOf="@id/gambar3"
+            android:text="Romi Fadhilah"
+            android:textColor="@color/black"
+            android:textSize="10sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/box3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/box2"
+        android:background="#FAFAFA"
+        android:paddingLeft="10dp">
+
+        <ImageView
+            android:id="@+id/gambar4"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/bell_icon"
+            app:srcCompat="@drawable/bell_outline" />
+
+        <TextView
+            android:id="@+id/notif3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/gambar4"
+            android:text="Assigntments"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/post_name3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_below="@id/notif3"
+            android:layout_toRightOf="@id/gambar4"
+            android:text="Romi Fadhilah"
+            android:textColor="@color/black"
+            android:textSize="10sp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

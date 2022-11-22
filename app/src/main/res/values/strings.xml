@@ -5,4 +5,8 @@
     <string name="courses">Merdeka Belajar Kampus Merdeka Teknologi Informasi \nTugas Akhir Teknologi Informasi \n[TIF4507] Sistem Interaktif (MP II) - Kelas A \n[TIF4506] Teknik Penulisan Karya Ilmiah - Kelas C \n[TIF4505] Data Warehouse dan Bisnis Intelligence - Kelas B \n[TIF4503] Enterprise Development Software - Kelas C \n[TIF4507P] Praktikum Sistem Interaktif - Kelas A</string>
     <string name="text1">Hey,</string>
     <string name="text2">How have you been?</string>
+    <string name="profile_tag">Profile</string>
+    <string name="notification_tag">Notifications</string>
+    <string name="back_icon">back_icon</string>
+    <string name="bell_icon">bell_icon</string>
 </resources>
