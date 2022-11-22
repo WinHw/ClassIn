@@ -9,4 +9,5 @@
     <string name="notification_tag">Notifications</string>
     <string name="back_icon">back_icon</string>
     <string name="bell_icon">bell_icon</string>
+    <string name="class_tag">Mobile Programming A</string>
 </resources>

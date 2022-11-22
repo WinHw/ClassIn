@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/gambar1"
+        android:layout_width="20dp"
+        android:layout_height="33dp"
+        app:srcCompat="@drawable/back"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/back_icon"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/gambar1"
+        android:text="@string/notification_tag"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/gambar1"
+        android:text="Today"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        />
+
+    <LinearLayout
+        android:id="@+id/notif_card"
+        android:layout_below="@id/title2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:elevation="40dp"
+
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/notif1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/gambar2"
+            android:text="TIF4502 Class Postponed"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/notif2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/gambar2"
+            android:text="Dear students,\n\nUnfortunately the class has to be postponed because i’m feeling unwell. I’m sorry for the sudden announcement. I hope you undertand.\n\nTo the leader of the class please immediately contact me to arrange the day.\n\nKind Thanks\n\nRomi"
+            android:textColor="@color/black"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/notif3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/gambar2"
+            android:text="Romi Fadhilah"
+            android:textColor="#636363"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
