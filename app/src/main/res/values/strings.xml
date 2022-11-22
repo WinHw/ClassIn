@@ -12,4 +12,6 @@
     <string name="class_tag">Mobile Programming A</string>
     <string name="welcome">Welcome</string>
     <string name="search_courses">Search courses</string>
+    <string name="class_distance"> You are <font color='#4CA456'>0.05 km</font> away from the class</string>
+    <string name="class_distance_far"> You are <font color='red'>4.2 km</font> away from the class</string>
 </resources>

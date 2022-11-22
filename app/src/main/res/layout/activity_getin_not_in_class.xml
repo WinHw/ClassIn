@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     >
-<!--    tools:context=".GetInActivity"-->
+    <!--    tools:context=".GetInActivity"-->
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -97,7 +97,7 @@
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:layout_marginTop="5dp"
                 android:layout_height="200dp"
-                android:src="@drawable/map"
+                android:src="@drawable/map_not_in_class"
                 app:civ_border_color="@color/black"
                 app:civ_border_width="1.5dp"
                 />
@@ -112,7 +112,7 @@
                 android:layout_marginTop="20dp"
                 android:drawableLeft="@drawable/ci_location"
                 android:fontFamily="@font/poppins_regular"
-                android:text=" Near Fasilkom-TI"
+                android:text=" Near Merdeka Walk"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </TableRow>
@@ -126,7 +126,7 @@
                 android:layout_marginTop="5dp"
                 android:drawableLeft="@drawable/bx_current_location"
                 android:fontFamily="@font/poppins_regular"
-                android:text="@string/class_distance"
+                android:text="@string/class_distance_far"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </TableRow>
