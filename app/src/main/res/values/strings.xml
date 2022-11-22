@@ -10,4 +10,6 @@
     <string name="back_icon">back_icon</string>
     <string name="bell_icon">bell_icon</string>
     <string name="class_tag">Mobile Programming A</string>
+    <string name="welcome">Welcome</string>
+    <string name="search_courses">Search courses</string>
 </resources>

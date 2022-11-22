@@ -12,4 +12,5 @@
     <color name="transparent">#00000000</color>
     <color name="light_grey">#DDDDDD</color>
     <color name="green_ci">#4CA456</color>
+    <color name="green_extralight">#FBFFFA</color>
 </resources>
