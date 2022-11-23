@@ -26,16 +26,21 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
     <RelativeLayout
         android:id="@+id/box1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_below="@+id/title"
-        android:background="#FAFAFA"
         android:paddingLeft="10dp">
 
         <ImageView
@@ -70,17 +75,23 @@
             android:textColor="@color/black"
             android:textSize="10sp"/>
     </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_below="@id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
     <RelativeLayout
         android:id="@+id/box2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@+id/box1"
-        android:background="#FAFAFA"
+        android:layout_below="@+id/card1"
         android:paddingLeft="10dp">
 
         <ImageView
@@ -115,16 +126,23 @@
             android:textColor="@color/black"
             android:textSize="10sp"/>
     </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card3"
+        android:layout_below="@id/card2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
     <RelativeLayout
         android:id="@+id/box3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@+id/box2"
-        android:background="#FAFAFA"
+        android:layout_below="@+id/card2"
         android:paddingLeft="10dp">
 
         <ImageView
@@ -159,5 +177,6 @@
             android:textColor="@color/black"
             android:textSize="10sp"/>
     </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

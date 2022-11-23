@@ -14,4 +14,8 @@
     <string name="search_courses">Search courses</string>
     <string name="class_distance"> You are <font color='#4CA456'>0.05 km</font> away from the class</string>
     <string name="class_distance_far"> You are <font color='red'>4.2 km</font> away from the class</string>
+    <string name="announcement_tag">Announcement</string>
+    <string name="search_announcement">Search Announcement</string>
+    <string name="search_icon">Search</string>
+    <string name="add_announcement">+ New Announcement</string>
 </resources>
