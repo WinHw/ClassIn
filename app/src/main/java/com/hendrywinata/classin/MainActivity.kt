@@ -19,6 +19,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        retrieveAccounts()
+//        addAccount()
+    }
+
+    private fun addAccount() {
+        RetrofitClient.instance.addAccount(
+            "003", "hw", "hw"
+        ).enqueue(object: Callback<Account> {
+            override fun onResponse(call: Call<Account>, response: Response<Account>) {
+                val responseText = "Response code: ${response.code()}\nResponse body: ${response.body()}"
+                response_code.text = responseText
+            }
+
+            override fun onFailure(call: Call<Account>, t: Throwable) {
+                response_code.text = t.message
+            }
+
+        })
+    }
+
+    private fun retrieveAccounts() {
         response_list.setHasFixedSize(true)
         response_list.layoutManager = LinearLayoutManager(this)
         RetrofitClient.instance.getAccounts().enqueue(object: Callback<ArrayList<Account>> {
@@ -34,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<Account>>, t: Throwable) {
-                Log.d("Firebase", "", t)
+                response_code.text = t.message
             }
 
         })
