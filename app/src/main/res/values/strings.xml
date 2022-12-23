@@ -1,4 +1,5 @@
 <resources>
+    <string name="firebase_url">https://classin-mobile005-default-rtdb.firebaseio.com</string>
     <string name="app_name">ClassIn</string>
     <string name="log_in">Log In</string>
     <string name="reset_password">Reset Password</string>
@@ -18,4 +19,6 @@
     <string name="search_announcement">Search Announcement</string>
     <string name="search_icon">Search</string>
     <string name="add_announcement">+ New Announcement</string>
+    <string name="et_username">NIM/NIP</string>
+    <string name="et_password">Password</string>
 </resources>
