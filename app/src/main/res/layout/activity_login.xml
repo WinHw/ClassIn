@@ -117,19 +117,30 @@
                 android:textSize="12sp"
                 />
 
-            <androidx.appcompat.widget.AppCompatButton
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="100dp"-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:textSize="12dp"-->
+<!--                android:text="Login"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:background="@color/green"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                />-->
+            <Button
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="100dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_regular"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:text="Login"
                 android:textAllCaps="false"
-                android:background="@color/green"
-                android:textColor="@color/white"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                />
+                android:background="@color/green" />
 
 
             <androidx.cardview.widget.CardView
