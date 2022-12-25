@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish()
         }
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
     }
 
     private fun addAccount() {

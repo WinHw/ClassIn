@@ -107,7 +107,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="100dp"
-                android:background="@color/green"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Log In"
                 android:textSize="12sp"
