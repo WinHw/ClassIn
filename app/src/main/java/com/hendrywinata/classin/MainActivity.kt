@@ -22,31 +22,37 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("ClassIn", MODE_PRIVATE)
         if (sharedPref.contains("aid")) {
             val accID = sharedPref.getString("aid", null)
-            RetrofitClient.instance.idExistAccount(accID)
-                .enqueue(object: Callback<String> {
-                    override fun onResponse(call: Call<String>, response: Response<String>) {
+            RetrofitClient.instance.getAccountDetailByID(accID)
+                .enqueue(object: Callback<Account> {
+                    override fun onResponse(call: Call<Account>, response: Response<Account>) {
                         if (response.code() == 200) {
-                            val accIDisExist = response.body()
-                            if (accIDisExist == "1") {
+                            val acc = response.body()
+                            if (acc != null) {
+                                val name = acc.name.toString()
+                                val level = acc.level.toString()
                                 startActivity(
                                     Intent(this@MainActivity, DashboardActivity::class.java)
                                         .putExtra("accID", accID)
+                                        .putExtra("accName", name)
+                                        .putExtra("accLevel", level)
                                 )
                                 finish()
                             } else {
+                                Toast.makeText(this@MainActivity, "Please log in again", Toast.LENGTH_LONG).show()
+                                Log.d("GET ACCOUNT DETAIL", "Account ID invalid")
                                 sharedPref.edit().remove("aid").apply()
                                 startActivity(Intent(this@MainActivity, LoginActivity::class.java))
                                 finish()
                             }
                         } else {
                             Toast.makeText(this@MainActivity, "Something wrong on server", Toast.LENGTH_LONG).show()
-                            Log.d("CHECK ACC ID EXIST (${response.code()})", response.body().toString())
+                            Log.d("GET ACCOUNT DETAIL (${response.code()})", response.body().toString())
                         }
                     }
 
-                    override fun onFailure(call: Call<String>, t: Throwable) {
+                    override fun onFailure(call: Call<Account>, t: Throwable) {
                         Toast.makeText(this@MainActivity, "Something wrong on server...", Toast.LENGTH_LONG).show()
-                        Log.d("CHECK ACC ID EXIST", t.toString())
+                        Log.d("GET ACCOUNT DETAIL FAIL", t.toString())
                     }
                 })
         } else {
@@ -54,6 +60,36 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 //        setContentView(R.layout.activity_main)
+    }
+
+    private fun checkAccountExist() {
+//        RetrofitClient.instance.idExistAccount(accID)
+//            .enqueue(object: Callback<String> {
+//                override fun onResponse(call: Call<String>, response: Response<String>) {
+//                    if (response.code() == 200) {
+//                        val accIDisExist = response.body()
+//                        if (accIDisExist == "1") {
+//                            startActivity(
+//                                Intent(this@MainActivity, DashboardActivity::class.java)
+//                                    .putExtra("accID", accID)
+//                            )
+//                            finish()
+//                        } else {
+//                            sharedPref.edit().remove("aid").apply()
+//                            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+//                            finish()
+//                        }
+//                    } else {
+//                        Toast.makeText(this@MainActivity, "Something wrong on server", Toast.LENGTH_LONG).show()
+//                        Log.d("CHECK ACC ID EXIST (${response.code()})", response.body().toString())
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<String>, t: Throwable) {
+//                    Toast.makeText(this@MainActivity, "Something wrong on server...", Toast.LENGTH_LONG).show()
+//                    Log.d("CHECK ACC ID EXIST", t.toString())
+//                }
+//            })
     }
 
     private fun addAccount() {
