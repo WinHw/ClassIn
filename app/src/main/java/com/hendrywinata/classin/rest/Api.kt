@@ -8,11 +8,24 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface Api {
-    @GET("accounts.json")
+    @FormUrlEncoded
+    @POST("accounts/login.php")
+    fun loginAccount(
+        @Field("username") username: String?,
+        @Field("password") password: String?
+    ): Call<Account>
+
+    @FormUrlEncoded
+    @POST("accounts/id_exist.php")
+    fun idExistAccount(
+        @Field("id") id: String?
+    ): Call<String>
+
+    @GET("accounts/read.php")
     fun getAccounts(): Call<ArrayList<Account>>
 
     @FormUrlEncoded
-    @POST("accounts.json")
+    @POST("accounts/create.php")
     fun addAccount(
         @Field("id") id: String?,
         @Field("username") username: String?,

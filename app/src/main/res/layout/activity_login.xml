@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="40dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,100 +68,91 @@
             android:padding="50dp"
             >
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginBottom="20dp"
-                app:boxCornerRadiusBottomEnd="6dp"
-                app:boxCornerRadiusBottomStart="6dp"
-                app:boxCornerRadiusTopEnd="6dp"
-                app:boxCornerRadiusTopStart="6dp"
-                android:layout_marginTop="2dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                app:boxBackgroundColor="@color/light_grey"
-                app:boxStrokeColor="@color/black"
-                app:boxStrokeWidthFocused="2dp">
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:hint="NIM / NIP"
+                android:inputType="text"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"
+                />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                app:boxCornerRadiusBottomEnd="6dp"
-                app:boxCornerRadiusBottomStart="6dp"
-                app:boxCornerRadiusTopEnd="6dp"
-                app:boxCornerRadiusTopStart="6dp"
-                android:layout_marginTop="2dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                app:boxBackgroundColor="@color/light_grey"
-                app:boxStrokeColor="@color/black"
-                app:boxStrokeWidthFocused="2dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"
+                />
 
             <TextView
+                android:id="@+id/tv_reset_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Forget your password?"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/gray"
                 android:textSize="12sp"
                 />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="100dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="12dp"
-                android:text="Login"
-                android:textAllCaps="false"
-                android:background="@color/green"
-                android:textColor="@color/white"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"
+                android:layout_marginBottom="100dp"
+                android:background="@color/green"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Log In"
+                android:textSize="12sp"
+                android:textAllCaps="false"
                 />
 
-
             <androidx.cardview.widget.CardView
-                app:cardBackgroundColor="@color/light_grey"
+                android:id="@+id/got_issue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                card_view:cardCornerRadius="4dp"
-                app:contentPaddingTop="12dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Got an issue?"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textColor="@color/gray"
-                    android:textSize="15sp"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
+                app:cardCornerRadius="5dp"
+                app:cardBackgroundColor="@color/light_grey"
+                app:contentPadding="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Report to administrator (helpdesk.aaa.ac.id)"
-                    android:fontFamily="@font/poppins_regular"
-                    android:background="@color/transparent"
-                    android:textColor="@color/gray"
-                    android:textAllCaps="false"
-                    android:layout_marginTop="4dp"
-                    android:textSize="10sp"
-                    />
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Got an issue?"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <TextView
+                        android:textColor="@color/gray"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Report to administrator\n[ helpdesk@usu.ac.id ]"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
+
     </LinearLayout>
+
 </ScrollView>
