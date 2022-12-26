@@ -63,6 +63,8 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(
                                 Intent(this@LoginActivity, DashboardActivity::class.java)
                                     .putExtra("accID", accID)
+                                    .putExtra("accLevel",  response.body()?.level)
+                                    .putExtra("accName", response.body()?.name)
                             )
                             finish()
                         } else {
