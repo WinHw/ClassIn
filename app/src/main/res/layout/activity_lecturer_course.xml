@@ -3,23 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/gambar1"
-        android:layout_width="20dp"
-        android:layout_height="33dp"
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
+        android:background="@null"
         android:contentDescription="@string/back_icon"
+        android:scaleType="fitCenter"
         app:srcCompat="@drawable/back" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="1dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/gambar1"
+        android:layout_toRightOf="@id/btn_back"
+        android:fontFamily="@font/poppins_regular"
         android:text="@string/class_tag"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -29,35 +33,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
-        <ImageView
-            android:id="@+id/gambar2"
+
+        <ImageButton
+            android:id="@+id/attend_class"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
+            android:background="@null"
             android:contentDescription="@string/back_icon"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/attend_class" />
+
         <TextView
             android:id="@+id/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/attend_class"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="1dp"
             android:layout_marginTop="20dp"
-            android:layout_below="@id/gambar2"
-            android:layout_centerHorizontal="true"
             android:text="Attend Class"
             android:textColor="#4CA456"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/gambar3"
+        <ImageButton
+            android:id="@+id/students_presence"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_below="@id/title2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:background="@null"
             android:contentDescription="@string/back_icon"
             android:elevation="10dp"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/student_presence" />
         <TextView
             android:id="@+id/title3"
@@ -65,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"
             android:layout_marginTop="20dp"
-            android:layout_below="@id/gambar3"
+            android:layout_below="@id/students_presence"
             android:layout_centerHorizontal="true"
             android:text="Student’s Presence"
             android:textColor="#4CA456"

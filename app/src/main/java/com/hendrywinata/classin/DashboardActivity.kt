@@ -31,43 +31,24 @@ class DashboardActivity : AppCompatActivity() {
         btn_logout.setOnClickListener { logoutAccount() }
     }
 
+    private fun courseItemClicked(course: CourseItem) {
+//        Toast.makeText(this@DashboardActivity, course.course_id, Toast.LENGTH_SHORT).show()
+        startActivity(
+            Intent(this@DashboardActivity, LecturerCourseActivity::class.java)
+                .putExtra("course_detail", course)
+        )
+    }
+
     private fun buildCourseList(courses: ArrayList<CourseItem>) {
         rv_courses.apply {
-            this.adapter = CourseListAdapter(courses)
+            this.adapter = CourseListAdapter(courses) { course: CourseItem ->
+                courseItemClicked(course)
+            }
             this.layoutManager = LinearLayoutManager(this@DashboardActivity)
         }
     }
 
     private fun retrieveDashboardDetail() {
-//        RetrofitClient.instance.getAccountDetailByID(accID)
-//            .enqueue(object: Callback<Account> {
-//                override fun onResponse(call: Call<Account>, response: Response<Account>) {
-//                    if (response.code() == 200) {
-//                        val acc = response.body()
-//                        if (acc != null) {
-//                            name = acc.name.toString()
-//                            level = acc.level.toString()
-//                            username = acc.username.toString()
-//                            setAccountDetail()
-//                        } else {
-//                            Toast.makeText(this@DashboardActivity, "Account ID invalid", Toast.LENGTH_LONG).show()
-//                            Log.d("GET ACCOUNT DETAIL NULL", acc.toString())
-//                            logoutAccount()
-//                        }
-//                    } else {
-//                        Toast.makeText(this@DashboardActivity, "Fail fetching from database", Toast.LENGTH_LONG).show()
-//                        Log.d("GET ACCOUNT DETAIL ${response.code()}", response.body().toString())
-//                        logoutAccount()
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<Account>, t: Throwable) {
-//                    Toast.makeText(this@DashboardActivity, "Fail fetching from database...", Toast.LENGTH_LONG).show()
-//                    Log.d("GET ACCOUNT DETAIL FAIL", t.toString())
-//                    logoutAccount()
-//                }
-//            })
-
         RetrofitClient.instance.getActiveCoursesByLevelAndID(accID, accLevel)
             .enqueue(object: Callback<ArrayList<CourseItem>> {
                 override fun onResponse(call: Call<ArrayList<CourseItem>>, response: Response<ArrayList<CourseItem>>) {

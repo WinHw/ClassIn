@@ -9,18 +9,21 @@ import com.hendrywinata.classin.R
 import com.hendrywinata.classin.data.CourseItem
 import kotlinx.android.synthetic.main.course_item.view.*
 
-class CourseListAdapter(private val courses: ArrayList<CourseItem>):
-    RecyclerView.Adapter<CourseListAdapter.CourseViewHolder>() {
-        inner class CourseViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-            fun bind(course: CourseItem) {
+class CourseListAdapter(
+    private val courses: ArrayList<CourseItem>,
+    val itemClickListener: (CourseItem) -> Unit
+): RecyclerView.Adapter<CourseListAdapter.CourseViewHolder>() {
+    inner class CourseViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+            fun bind(course: CourseItem, itemClickListener: (CourseItem) -> Unit) {
+                itemView.setOnClickListener { itemClickListener(course) }
                 with(itemView) {
                     val semester = if (course.course_semester == "odd") "Ganjil" else "Genap"
                     course_item_name.text = "[${course.course_code}] ${course.course_name} - ${course.course_class}"
                     course_item_time.text = "$semester ${course.course_year}"
                     course_item_lecturer.text = course.lecturer_name
-                    this.setOnClickListener {
-                        Toast.makeText(this.context, course.course_id, Toast.LENGTH_SHORT).show()
-                    }
+//                    this.setOnClickListener {
+//                        Toast.makeText(this.context, course.course_id, Toast.LENGTH_SHORT).show()
+//                    }
                 }
             }
         }
@@ -32,7 +35,7 @@ class CourseListAdapter(private val courses: ArrayList<CourseItem>):
     }
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-        holder.bind(courses[position])
+        holder.bind(courses[position], itemClickListener)
     }
 
     override fun getItemCount(): Int = courses.size

@@ -1,6 +1,10 @@
 package com.hendrywinata.classin.data
 
-data class CourseItem(
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class CourseItem (
     val course_id: String?,
     val course_code: String?,
     val course_name: String?,
@@ -10,4 +14,4 @@ data class CourseItem(
     val course_status: String?,
     val lecturer_id: String?,
     val lecturer_name: String?,
-)
+): Parcelable
