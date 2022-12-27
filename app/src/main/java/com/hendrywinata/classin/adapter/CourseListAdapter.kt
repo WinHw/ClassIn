@@ -3,7 +3,6 @@ package com.hendrywinata.classin.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.hendrywinata.classin.R
 import com.hendrywinata.classin.data.CourseItem
@@ -21,9 +20,6 @@ class CourseListAdapter(
                     course_item_name.text = "[${course.course_code}] ${course.course_name} - ${course.course_class}"
                     course_item_time.text = "$semester ${course.course_year}"
                     course_item_lecturer.text = course.lecturer_name
-//                    this.setOnClickListener {
-//                        Toast.makeText(this.context, course.course_id, Toast.LENGTH_SHORT).show()
-//                    }
                 }
             }
         }

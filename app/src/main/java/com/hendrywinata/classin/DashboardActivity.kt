@@ -4,10 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hendrywinata.classin.adapter.CourseListAdapter
+import com.hendrywinata.classin.adapter.PresenceListAdapter
 import com.hendrywinata.classin.data.CourseItem
+import com.hendrywinata.classin.data.PresenceItem
 import com.hendrywinata.classin.rest.RetrofitClient
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import retrofit2.Call
@@ -32,7 +35,6 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun courseItemClicked(course: CourseItem) {
-//        Toast.makeText(this@DashboardActivity, course.course_id, Toast.LENGTH_SHORT).show()
         startActivity(
             Intent(this@DashboardActivity, LecturerCourseActivity::class.java)
                 .putExtra("course_detail", course)
@@ -48,6 +50,22 @@ class DashboardActivity : AppCompatActivity() {
         }
     }
 
+    private fun presenceItemClicked(presence: PresenceItem) {
+//        startActivity(
+//            Intent(this@DashboardActivity, LecturerCourseActivity::class.java)
+//                .putExtra("course_detail", presence)
+//        )
+    }
+
+    private fun buildPresenceList(presences: ArrayList<PresenceItem>) {
+        rv_presences.apply {
+            this.adapter = PresenceListAdapter(presences) { presence: PresenceItem ->
+                presenceItemClicked(presence)
+            }
+            this.layoutManager = LinearLayoutManager(this@DashboardActivity)
+        }
+    }
+
     private fun retrieveDashboardDetail() {
         RetrofitClient.instance.getActiveCoursesByLevelAndID(accID, accLevel)
             .enqueue(object: Callback<ArrayList<CourseItem>> {
@@ -56,8 +74,13 @@ class DashboardActivity : AppCompatActivity() {
                         val list = response.body()
                         Log.d("GET COURSE ITEMS", list.toString())
 
-                        if (list!!.isEmpty()) Toast.makeText(this@DashboardActivity, "There is no active course linked to your account", Toast.LENGTH_LONG).show()
-                        else buildCourseList(list)
+                        if (list!!.isEmpty()) {
+                            tv_no_courses.visibility = View.VISIBLE
+                            Toast.makeText(this@DashboardActivity, "There is no active course linked to your account", Toast.LENGTH_LONG).show()
+                        } else {
+                            tv_no_courses.visibility = View.INVISIBLE
+                            buildCourseList(list)
+                        }
                     } else {
                         Toast.makeText(this@DashboardActivity, "Fail fetching from database", Toast.LENGTH_LONG).show()
                         Log.d("GET COURSE ITEMS FAIL ${response.code()}", response.body().toString())
@@ -67,6 +90,34 @@ class DashboardActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<ArrayList<CourseItem>>, t: Throwable) {
                     Toast.makeText(this@DashboardActivity, "Fail fetching from database...", Toast.LENGTH_LONG).show()
                     Log.d("GET COURSE ITEMS FAIL", t.toString())
+                }
+            })
+
+        RetrofitClient.instance.getOpenedPresencesByLevelAndID(accID, accLevel)
+            .enqueue(object: Callback<ArrayList<PresenceItem>> {
+                override fun onResponse(
+                    call: Call<ArrayList<PresenceItem>>,
+                    response: Response<ArrayList<PresenceItem>>
+                ) {
+                    if (response.code() == 200) {
+                        val list = response.body()
+                        Log.d("GET PRESENCE ITEMS", list.toString())
+
+                        if (list!!.isEmpty()) {
+                            tv_no_presences.visibility = View.VISIBLE
+                        } else {
+                            tv_no_presences.visibility = View.INVISIBLE
+                            buildPresenceList(list)
+                        }
+                    } else {
+                        Toast.makeText(this@DashboardActivity, "Fail fetching from database", Toast.LENGTH_LONG).show()
+                        Log.d("GET PRESENCE ITEMS ${response.code()}", response.body().toString())
+                    }
+                }
+
+                override fun onFailure(call: Call<ArrayList<PresenceItem>>, t: Throwable) {
+                    Toast.makeText(this@DashboardActivity, "Fail fetching from database...", Toast.LENGTH_LONG).show()
+                    Log.d("GET PRESENCE ITEMS FAIL", t.toString())
                 }
             })
     }
