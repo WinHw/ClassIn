@@ -2,6 +2,7 @@ package com.hendrywinata.classin.rest
 
 import com.hendrywinata.classin.data.Account
 import com.hendrywinata.classin.data.CourseItem
+import com.hendrywinata.classin.data.Response
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -21,6 +22,15 @@ interface Api {
         @Query("accID") accID: String?,
         @Query("level") level: String?
     ):Call<ArrayList<CourseItem>>
+
+    @FormUrlEncoded
+    @POST("presences/add_session.php")
+    fun addCoursePresenceSession(
+        @Field("course_id") course_id: String?,
+        @Field("start_datetime") start_datetime: String?,
+        @Field("end_datetime") end_datetime: String?,
+        @Field("description") description: String?,
+    ): Call<Response>
 
 //    TODO : not used yet, might be deleted
 

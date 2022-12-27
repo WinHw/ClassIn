@@ -2,14 +2,20 @@ package com.hendrywinata.classin
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.hendrywinata.classin.data.CourseItem
+import com.hendrywinata.classin.data.Response
+import com.hendrywinata.classin.rest.RetrofitClient
 import kotlinx.android.synthetic.main.activity_add_course_session.*
 import kotlinx.android.synthetic.main.activity_add_course_session.add_session
 import kotlinx.android.synthetic.main.activity_add_course_session.btn_back
 import kotlinx.android.synthetic.main.activity_add_course_session.tv_title
+import retrofit2.Call
+import retrofit2.Callback
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -61,7 +67,36 @@ class AddCourseSessionActivity : AppCompatActivity() {
             val startTimestamp = SimpleDateFormat(datetimeFormat).parse(startDateTime).time
             val endTimestamp = SimpleDateFormat(datetimeFormat).parse(endDateTime).time
             if ((endTimestamp - startTimestamp) > 0) {
-                Toast.makeText(this, (endTimestamp - startTimestamp).toString(), Toast.LENGTH_LONG).show()
+                val desc = if (session_description.text.isEmpty()) "-" else session_description.text.toString()
+                RetrofitClient.instance.addCoursePresenceSession(course.course_id, startDateTime, endDateTime, desc)
+                    .enqueue(object: Callback<Response> {
+                        override fun onResponse(
+                            call: Call<Response>,
+                            response: retrofit2.Response<Response>
+                        ) {
+                            if (response.code() == 200) {
+                                val resp = response.body()
+                                if (resp!!.error) Toast.makeText(this@AddCourseSessionActivity, resp.message + ", please try again later", Toast.LENGTH_LONG).show()
+                                else {
+                                    Toast.makeText(this@AddCourseSessionActivity, resp.message, Toast.LENGTH_SHORT).show()
+                                    startActivity(
+                                        Intent(this@AddCourseSessionActivity, LecturerCourseActivity::class.java)
+                                            .putExtra("course_detail", course)
+                                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                                    )
+                                    this@AddCourseSessionActivity.finish()
+                                }
+                            } else {
+                                Toast.makeText(this@AddCourseSessionActivity, "Something wrong on server", Toast.LENGTH_LONG).show()
+                                Log.d("ADD SESSION (${response.code()})", response.body().toString())
+                            }
+                        }
+
+                        override fun onFailure(call: Call<Response>, t: Throwable) {
+                            Toast.makeText(this@AddCourseSessionActivity, "Something wrong on server...", Toast.LENGTH_LONG).show()
+                            Log.d("ADD SESSION FAIL", t.toString())
+                        }
+                    })
             } else Toast.makeText(this, "Session start datetime must come before end datetime", Toast.LENGTH_LONG).show()
         }
     }
