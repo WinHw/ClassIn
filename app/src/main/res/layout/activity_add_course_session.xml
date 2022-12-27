@@ -36,10 +36,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:text="Add Session"
         android:textColor="@color/green"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,15 +59,27 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Date"
+                android:text="From"
+                android:textSize="16sp"
                 android:textColor="@color/green" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                />
+
+            <Button
+                android:id="@+id/datetime_picker_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:text="Date" />
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:text="Set DateTime"
+                />
+
         </TableRow>
 
         <TableRow>
@@ -75,14 +87,27 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
+                android:text="To"
+                android:textSize="16sp"
                 android:textColor="@color/green" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                />
+
+            <Button
+                android:id="@+id/datetime_picker_end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="4" />
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:text="Set DateTime"
+                />
+
         </TableRow>
 
         <TableRow>
@@ -90,25 +115,49 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Description"
+                android:textSize="16sp"
                 android:textColor="@color/green" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                />
+
+            <EditText
+                android:id="@+id/session_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="4" />
+                android:inputType="text|textMultiLine"
+                android:layout_weight="1" />
         </TableRow>
+
     </TableLayout>
 
-    <Button
-        android:id="@+id/add_session"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:text="+ Add Session"
-        android:textAllCaps="false"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+<!--        <Button-->
+<!--            android:id="@+id/cancel_session"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textAllCaps="false"-->
+<!--            style="@style/OutlineButton"-->
+<!--            android:text="Back"/>-->
+        <Button
+            android:id="@+id/add_session"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Add"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
