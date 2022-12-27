@@ -11,5 +11,7 @@ class AttendPresenceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attend_presence)
         presence = intent.getParcelableExtra("presence_detail")!!
+
+        btn_back.setOnClickListener { this.finish() }
     }
 }
