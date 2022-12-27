@@ -51,10 +51,10 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun presenceItemClicked(presence: PresenceItem) {
-//        startActivity(
-//            Intent(this@DashboardActivity, LecturerCourseActivity::class.java)
-//                .putExtra("course_detail", presence)
-//        )
+        startActivity(
+            Intent(this@DashboardActivity, AttendPresenceActivity::class.java)
+                .putExtra("presence_detail", presence)
+        )
     }
 
     private fun buildPresenceList(presences: ArrayList<PresenceItem>) {
