@@ -18,18 +18,23 @@
         tools:targetApi="31">
         <activity
             android:name=".AddCourseSessionActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".LecturerCourseSessionActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".LecturerCourseActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".DashboardActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".SplashscreenActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -40,12 +45,15 @@
         </activity>
         <activity
             android:name=".ProfileActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ResetPasswordActivity"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -53,6 +61,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
     </application>
 
