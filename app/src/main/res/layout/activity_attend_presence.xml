@@ -1,174 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        app:srcCompat="@drawable/back"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="back_icon"/>
-
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/btn_back"
-        app:layout_constraintTop_toTopOf="@+id/btn_back"
-        android:layout_marginStart="5dp"
-        android:text="Attendance"
-        android:textColor="@color/black"
-        android:fontFamily="@font/poppins_regular"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-
-    <TableLayout
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.hendrywinata.classin.viewmodel.GeofenceViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_maps_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="100dp"
-        >
+        android:layout_height="match_parent">
 
-        <TableRow
-            android:gravity="center_horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Mobile Programming"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="24sp"/>
-        </TableRow>
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/back"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="back_icon"/>
 
-        <TableRow
-            android:gravity="center_horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="10.30 - 12.10"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="20sp"/>
-        </TableRow>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/btn_back"
+            app:layout_constraintTop_toTopOf="@+id/btn_back"
+            android:layout_marginStart="5dp"
+            android:text="Attendance"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
-        <TableRow
-            android:gravity="center_horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Wednesday, Sept 27"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="20sp"/>
-        </TableRow>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="100dp"
+            >
 
-        <TableRow
-            android:gravity="center_horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="C Building, Fasilkom-TI"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="14sp"/>
-        </TableRow>
+            <TableRow
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Mobile Programming"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="24sp"/>
+            </TableRow>
 
-        <TableRow
-            android:gravity="center_horizontal">
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:layout_marginTop="5dp"
-                android:layout_height="200dp"
-                android:src="@drawable/map"
-                app:civ_border_color="@color/black"
-                app:civ_border_width="1.5dp"
-                />
-        </TableRow>
+            <TableRow
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="10.30 - 12.10"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="20sp"/>
+            </TableRow>
 
-        <TableRow
-            android:gravity="center_horizontal">
+            <TableRow
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Wednesday, Sept 27"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="20sp"/>
+            </TableRow>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:drawableLeft="@drawable/ci_location"
-                android:fontFamily="@font/poppins_regular"
-                android:text=" Near Fasilkom-TI"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </TableRow>
+            <TableRow
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="C Building, Fasilkom-TI"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="14sp"/>
+            </TableRow>
 
-        <TableRow
-            android:gravity="center_horizontal">
+            <TableRow
+                android:gravity="center_horizontal">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/map"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="1.5dp"
+                    />
+            </TableRow>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:drawableLeft="@drawable/bx_current_location"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@string/class_distance"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </TableRow>
+            <TableRow
+                android:gravity="center_horizontal">
 
-        <TableRow
-            android:gravity="center_horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:layout_marginTop="10dp"
-                android:text="10.30"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="30sp"/>
-        </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:drawableLeft="@drawable/ci_location"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text=" Near Fasilkom-TI"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
 
-        <TableRow
-            android:gravity="center_horizontal">
+            <TableRow
+                android:gravity="center_horizontal">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/green"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Attend Class"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="12dp"
-                tools:ignore="TextContrastCheck" />
-        </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@drawable/bx_current_location"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/class_distance"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
 
-        <TableRow
-            android:gravity="center_horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="can’t get in to class today?"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/green"
-                android:layout_marginTop="8dp"
-                android:textSize="12sp"
-                android:layout_gravity="center"
-                />
-        </TableRow>
+            <TableRow
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:text="10.30"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="30sp"/>
+            </TableRow>
 
-    </TableLayout>
+            <TableRow
+                android:gravity="center_horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Attend Class"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    tools:ignore="TextContrastCheck" />
+            </TableRow>
+
+            <TableRow
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="can’t get in to class today?"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/green"
+                    android:layout_marginTop="8dp"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
