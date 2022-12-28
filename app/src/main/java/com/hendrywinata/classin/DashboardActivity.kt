@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hendrywinata.classin.adapter.CourseListAdapter
@@ -31,6 +32,7 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
         tv_name.text = accName
 
+        img_profile.setOnClickListener { profile() }
         btn_logout.setOnClickListener { logoutAccount() }
     }
 
@@ -120,6 +122,16 @@ class DashboardActivity : AppCompatActivity() {
                     Log.d("GET PRESENCE ITEMS FAIL", t.toString())
                 }
             })
+    }
+
+    private fun profile() {
+        val profile = findViewById(R.id.img_profile) as ImageView
+        startActivity(
+            Intent(this@DashboardActivity, ProfileActivity::class.java)
+                .putExtra("accID", accID)
+                .putExtra("accName", accName)
+        )
+        finish()
     }
 
     private fun logoutAccount() {

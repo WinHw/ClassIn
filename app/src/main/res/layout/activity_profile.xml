@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/back_mhs"
+            android:id="@+id/btn_back_mhs"
             android:layout_width="20dp"
             android:layout_height="33dp"
             app:srcCompat="@drawable/back"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="19.5dp"
-            android:layout_toRightOf="@id/back_mhs"
+            android:layout_toRightOf="@id/btn_back_mhs"
             android:text="Profile"
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_regular"
@@ -36,7 +36,7 @@
             android:textStyle="bold"/>
     </RelativeLayout>
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="60dp"
@@ -57,13 +57,13 @@
 
         <TableRow
             android:gravity="center_horizontal">
+
             <com.mikhaellopez.circularimageview.CircularImageView
-                android:layout_marginTop="5dp"
                 android:layout_height="200dp"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/avatar"
                 app:civ_border_color="@color/black"
-                app:civ_border_width="1.5dp"
-                />
+                app:civ_border_width="1.5dp" />
         </TableRow>
 
         <TableRow
