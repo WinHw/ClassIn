@@ -34,6 +34,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="John Doe"
             android:textColor="@color/green"
+            android:maxWidth = "240sp"
             android:textSize="20sp" />
 
     </LinearLayout>
