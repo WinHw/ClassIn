@@ -37,10 +37,14 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun courseItemClicked(course: CourseItem) {
-        startActivity(
-            Intent(this@DashboardActivity, LecturerCourseActivity::class.java)
-                .putExtra("course_detail", course)
-        )
+        if (accLevel == "lecturer") {
+            startActivity(
+                Intent(this@DashboardActivity, LecturerCourseActivity::class.java)
+                    .putExtra("course_detail", course)
+            )
+        } else if (accLevel == "student") {
+            Toast.makeText(this, course.course_id, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun buildCourseList(courses: ArrayList<CourseItem>) {
@@ -125,13 +129,11 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun profile() {
-        val profile = findViewById(R.id.img_profile) as ImageView
         startActivity(
             Intent(this@DashboardActivity, ProfileActivity::class.java)
                 .putExtra("accID", accID)
                 .putExtra("accName", accName)
         )
-        finish()
     }
 
     private fun logoutAccount() {

@@ -25,7 +25,7 @@ class ProfileActivity : AppCompatActivity() {
         accID = intent.getStringExtra("accID").toString()
         retrieveAccountDetail()
         setContentView(R.layout.activity_profile)
-//        btn_back_mhs.setOnClickListener { }
+        btn_back_mhs.setOnClickListener { this@ProfileActivity.finish() }
     }
 
     private fun retrieveAccountDetail() {
