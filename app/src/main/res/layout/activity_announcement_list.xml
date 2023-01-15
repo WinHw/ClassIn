@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/gambar1"
+        android:id="@+id/btn_back_announcement"
         android:layout_width="20dp"
         android:layout_height="33dp"
         android:layout_alignParentStart="true"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/gambar1"
+        android:layout_toRightOf="@id/btn_back_announcement"
         android:text="@string/announcement_tag"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/search_announcement"
                 android:background="#00000000"
-                android:textSize="15dp"
+                android:textSize="16sp"
                 android:paddingLeft="5dp"
                 />
         </LinearLayout>
@@ -67,7 +67,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card2"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
@@ -82,11 +82,12 @@
             android:orientation="horizontal"
             >
             <Button
+                android:id="@+id/add_announcement"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:text="@string/add_announcement"
                 android:background="@android:color/transparent"
-                android:textSize="10dp"
+                android:textSize="16sp"
                 android:textAllCaps="false"
                 />
         </LinearLayout>
@@ -117,18 +118,19 @@
                 android:layout_marginTop="5dp"
                 android:text="TIF4502 Class Postponed"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/post_name2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/notif2"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="1dp"
-                android:layout_below="@id/notif2"
                 android:text="TIF4502 A, TIF4502 C"
                 android:textColor="#888888"
-                android:textSize="10sp"/>
+                android:textSize="13sp" />
             <TextView
                 android:id="@+id/post_name3"
                 android:layout_width="wrap_content"
@@ -139,7 +141,7 @@
                 android:text="Just now"
                 android:layout_alignParentRight="true"
                 android:textColor="#888888"
-                android:textSize="10sp"/>
+                android:textSize="13sp"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

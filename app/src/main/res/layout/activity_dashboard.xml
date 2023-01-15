@@ -47,6 +47,14 @@
         app:layout_constraintTop_toTopOf="@+id/welcome_text" >
 
         <ImageView
+            android:id="@+id/announcement_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/megaphone_outline_green"
+            android:layout_marginStart="10dp"
+            android:visibility="invisible" />
+
+        <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/schedule"
