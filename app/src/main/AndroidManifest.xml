@@ -17,6 +17,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AddAnnouncementActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".AttendPresenceActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
