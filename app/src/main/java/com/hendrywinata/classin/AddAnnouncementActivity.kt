@@ -27,9 +27,6 @@ class AddAnnouncementActivity : AppCompatActivity(), AdapterView.OnItemSelectedL
     private var sendToCourseCode: String? = null
     private var sendToCourseClass: String? = null
 
-//    private var classItem = arrayOf("All", "Kelas 1", "Kelas 2", "Kelas 3", "Kelas 4", "Kelas 5")
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
