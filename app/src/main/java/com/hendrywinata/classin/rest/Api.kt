@@ -66,4 +66,9 @@ interface Api {
         @Field("title") title: String?,
         @Field("content") content: String?
     ): Call<Response>
+
+    @GET("announcements/announcement_list.php")
+    fun getAnnouncementList(
+        @Query("accID") accID: String?
+    ):Call<ArrayList<AnnouncementItem>>
 }
