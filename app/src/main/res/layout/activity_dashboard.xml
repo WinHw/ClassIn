@@ -188,7 +188,7 @@
             tools:listitem="@layout/course_item"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="horizontal"
-            android:scrollbars="horizontal"
+            android:scrollbars="vertical"
             android:scrollbarStyle="outsideInset"
             android:paddingBottom="5dp"
             app:layout_constraintEnd_toEndOf="parent"

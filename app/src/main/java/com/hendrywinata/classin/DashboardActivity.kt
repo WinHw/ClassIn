@@ -56,7 +56,7 @@ class DashboardActivity : AppCompatActivity() {
             this.adapter = CourseListAdapter(courses) { course: CourseItem ->
                 courseItemClicked(course)
             }
-            this.layoutManager = LinearLayoutManager(this@DashboardActivity)
+            this.layoutManager = LinearLayoutManager(this@DashboardActivity, LinearLayoutManager.HORIZONTAL, false)
         }
     }
 
