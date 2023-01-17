@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageView
-        android:id="@+id/gambar1"
+        android:id="@+id/btn_back_announcement_view"
         android:layout_width="20dp"
         android:layout_height="33dp"
         app:srcCompat="@drawable/back"
@@ -19,28 +19,26 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/gambar1"
-        android:text="@string/notification_tag"
+        android:layout_toRightOf="@id/btn_back_announcement_view"
+        android:text="@string/announcement_tag"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/title2"
+        android:id="@+id/date_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/title"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="5dp"
-        android:layout_below="@id/title"
-        android:layout_toRightOf="@id/gambar1"
+        android:layout_toRightOf="@id/btn_back_announcement_view"
         android:text="Today"
         android:textColor="@color/black"
-        android:textSize="10sp"
-        />
+        android:textSize="16sp" />
 
     <androidx.cardview.widget.CardView
-        android:layout_below="@id/title2"
+        android:layout_below="@id/date_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
@@ -49,7 +47,7 @@
 
     <LinearLayout
         android:id="@+id/notif_card"
-        android:layout_below="@id/title2"
+        android:layout_below="@id/date_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -60,38 +58,26 @@
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/notif1"
+            android:id="@+id/announcement_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:layout_toRightOf="@id/gambar2"
             android:text="TIF4502 Class Postponed"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/notif2"
+            android:id="@+id/announcement_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/gambar2"
             android:text="Dear students,\n\nUnfortunately the class has to be postponed because i’m feeling unwell. I’m sorry for the sudden announcement. I hope you undertand.\n\nTo the leader of the class please immediately contact me to arrange the day.\n\nKind Thanks\n\nRomi"
             android:textColor="@color/black"
-            android:textSize="13sp"/>
+            android:textSize="19sp"/>
 
-        <TextView
-            android:id="@+id/notif3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/gambar2"
-            android:text="Romi Fadhilah"
-            android:textColor="#636363"
-            android:textSize="8sp"/>
     </LinearLayout>
     </androidx.cardview.widget.CardView>
 
