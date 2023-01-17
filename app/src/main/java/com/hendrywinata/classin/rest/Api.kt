@@ -57,4 +57,13 @@ interface Api {
         @Field("username") username: String?,
         @Field("password") password: String?
     ): Call<Account>
+
+    @FormUrlEncoded
+    @POST("announcements/add_announcement.php")
+    fun addAnnouncement(
+        @Field("course_code") course_code: String?,
+        @Field("course_class") course_class: String?,
+        @Field("title") title: String?,
+        @Field("content") content: String?
+    ): Call<Response>
 }

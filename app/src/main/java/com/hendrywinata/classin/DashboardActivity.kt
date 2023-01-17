@@ -28,10 +28,14 @@ class DashboardActivity : AppCompatActivity() {
         accID = intent.getStringExtra("accID").toString()
         accName = intent.getStringExtra("accName").toString()
         accLevel = intent.getStringExtra("accLevel").toString()
+
         retrieveDashboardDetail()
         setContentView(R.layout.activity_dashboard)
         tv_name.text = accName
+        if (accLevel == "lecturer")
+            announcement_icon.visibility = View.VISIBLE
 
+        announcement_icon.setOnClickListener { announcement() }
         img_profile.setOnClickListener { profile() }
         btn_logout.setOnClickListener { logoutAccount() }
     }
@@ -52,7 +56,7 @@ class DashboardActivity : AppCompatActivity() {
             this.adapter = CourseListAdapter(courses) { course: CourseItem ->
                 courseItemClicked(course)
             }
-            this.layoutManager = LinearLayoutManager(this@DashboardActivity)
+            this.layoutManager = LinearLayoutManager(this@DashboardActivity, LinearLayoutManager.HORIZONTAL, false)
         }
     }
 
@@ -126,6 +130,14 @@ class DashboardActivity : AppCompatActivity() {
                     Log.d("GET PRESENCE ITEMS FAIL", t.toString())
                 }
             })
+    }
+
+    private fun announcement() {
+        startActivity(
+            Intent(this@DashboardActivity, AnnouncementListActivity::class.java)
+                .putExtra("accID", accID)
+                .putExtra("accName", accName)
+        )
     }
 
     private fun profile() {
